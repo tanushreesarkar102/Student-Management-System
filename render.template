@@ -1,0 +1,16 @@
+from flask import Flask, jsonify, request, render_template
+
+app = Flask(__name__)
+
+# Route for your API data
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    return jsonify({"message": "Waste Management System API is running!"})
+
+# Route for your Home Page (Points to your render.html file)
+@app.route('/')
+def home():
+    return render_template('render.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
